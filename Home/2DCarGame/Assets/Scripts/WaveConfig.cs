@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveConfig : MonoBehaviour
+[CreateAssetMenu(menuName = "Enemy Wave Config")]
+public class WaveConfig : ScriptableObject
 {
     //the enemy
     [SerializeField] GameObject enemyPrefab;

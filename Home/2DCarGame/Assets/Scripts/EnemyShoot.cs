@@ -34,7 +34,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void EnemyFire()
     {
-        GameObject enemyLaser = Instantiate(enemyMisslePrefab, transform.position, Quaternion.identity);
-        enemyLaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -enemyMissleSpeed);
+        GameObject Missle = Instantiate(enemyMisslePrefab, transform.position, Quaternion.identity);
+        Missle.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -enemyMissleSpeed);
     }
 }
