@@ -6,9 +6,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
-    [SerializeField] float health = 200;
+    [SerializeField] float health = 10;
 
-    float xMin, xMax, yMin, yMax;
+    float xMin, xMax;
 
     void Start()
     {
@@ -23,9 +23,27 @@ public class Player : MonoBehaviour
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
 
-        //set boundaries on the y-axis
-        yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
-        yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    public void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        DamageDealer dmg = otherObject.gameObject.GetComponent<DamageDealer>();
+        if (!dmg)
+        {
+            return;
+        }
+        ProcessHit(dmg);
+    }
+
+    private void ProcessHit(DamageDealer dmg)
+    {
+        health -= dmg.GetDamage();
+        dmg.Hit();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

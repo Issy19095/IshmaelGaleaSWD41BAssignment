@@ -38,7 +38,6 @@ public class EnemyPathing : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, enemyMovement);
 
-            //if target waypoint is reached upadted to next waypoint
             if (transform.position == targetPosition)
             {
                 waypointIndex++;

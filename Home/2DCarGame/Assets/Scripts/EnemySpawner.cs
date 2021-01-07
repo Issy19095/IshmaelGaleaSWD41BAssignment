@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return StartCoroutine(SpawnAllWaves());
         }
-        while (looping); //looping == true
+        while (looping);
     }
 
     void Update()

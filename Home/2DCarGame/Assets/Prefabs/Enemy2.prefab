@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1127743722282213002}
   - component: {fileID: 292954596408891792}
   - component: {fileID: 414282395555981079}
+  - component: {fileID: -8937023991095950895}
+  - component: {fileID: -8518975459673329028}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -95,7 +97,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -145,3 +147,37 @@ MonoBehaviour:
   maxTimeBetweenShots: 3
   enemyMisslePrefab: {fileID: 7405776916551727968, guid: 79ecbff2813987b448e2ba5ac11e04f4, type: 3}
   enemyMissleSpeed: 10
+--- !u!114 &-8937023991095950895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463499263766350816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a158568c7f4fe247af5bbcc69cde997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+--- !u!50 &-8518975459673329028
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4463499263766350816}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
