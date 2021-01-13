@@ -42,13 +42,19 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
     void Update()
     {
         Move();
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        FindObjectOfType<Level>().LoadGameOVer();
     }
 
     private void Move()
