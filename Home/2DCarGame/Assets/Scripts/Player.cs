@@ -8,6 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] float padding = 0.7f;
     [SerializeField] float health = 10;
 
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 1f;
+
+    [SerializeField] AudioClip obstacleHitSound;
+    [SerializeField] [Range(0, 1)] float obstacleHitSoundVolume = 0.75f;
+
     float xMin, xMax;
 
     void Start()
@@ -40,6 +46,9 @@ public class Player : MonoBehaviour
         health -= dmg.GetDamage();
         dmg.Hit();
 
+        AudioSource.PlayClipAtPoint(obstacleHitSound, Camera.main.transform.position, obstacleHitSoundVolume);
+
+
         if (health <= 0)
         {
             Die();
@@ -54,6 +63,8 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(explosion, explosionDuration);
         FindObjectOfType<Level>().LoadGameOVer();
     }
 
