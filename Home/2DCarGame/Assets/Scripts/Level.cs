@@ -7,10 +7,16 @@ public class Level : MonoBehaviour
 {
     [SerializeField] float delayInSec = 2f;
 
-    IEnumerator WaitAndLoad()
+    IEnumerator WaitAndLoadGameOver()
     {
         yield return new WaitForSeconds(delayInSec);
         SceneManager.LoadScene("GameOver");
+    }
+
+    IEnumerator WaitAndLoadWinner()
+    {
+        yield return new WaitForSeconds(delayInSec);
+        SceneManager.LoadScene("Winner");
     }
 
     public void LoadStartMenu()
@@ -21,11 +27,17 @@ public class Level : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Main");
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGameOVer()
     {
-        StartCoroutine(WaitAndLoad());
+        StartCoroutine(WaitAndLoadGameOver());
+    }
+
+    public void LoadWinner()
+    {
+        StartCoroutine(WaitAndLoadWinner());
     }
 
     public void QuitGame()
