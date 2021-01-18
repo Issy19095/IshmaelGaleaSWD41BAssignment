@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8565699351274057154}
   - component: {fileID: 8565699351274057155}
   - component: {fileID: 8565699351274057157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,8 +124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 0.7
-  health: 5
+  health: 10
   deathVFX: {fileID: 5969352652424905105, guid: f40315e91ce046b40aefb75867a6d17b, type: 3}
   explosionDuration: 1
   obstacleHitSound: {fileID: 8300000, guid: 6aa906ff627cf9b418c174e3e32f62a2, type: 3}
   obstacleHitSoundVolume: 0.25
+  gameSession: {fileID: 0}

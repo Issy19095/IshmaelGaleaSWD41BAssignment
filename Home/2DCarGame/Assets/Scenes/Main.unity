@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4323013497141558186, guid: 4b5f2cbd6ca1657459018e8d3235ba61, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 09567ee003db48c4e8b5c918be571ee9, type: 3}
     - target: {fileID: 9203421076421686534, guid: 4b5f2cbd6ca1657459018e8d3235ba61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1064,6 +1068,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1022164340}
     m_Modifications:
+    - target: {fileID: 298992708583215998, guid: 820d9435115d28547bb7558881e07cfa, type: 3}
+      propertyPath: pointGainSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 82cd4d81ddd7e6d46ab1d471b093563d, type: 3}
+    - target: {fileID: 298992708583215998, guid: 820d9435115d28547bb7558881e07cfa, type: 3}
+      propertyPath: pointGainSoundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2256161904472217443, guid: 820d9435115d28547bb7558881e07cfa, type: 3}
       propertyPath: m_Name
       value: ScoreCollector

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotCounter: 0
   minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
+  maxTimeBetweenShots: 0.3
   enemyMisslePrefab: {fileID: 7405776916551727968, guid: 79ecbff2813987b448e2ba5ac11e04f4, type: 3}
   enemyMissleSpeed: 10
 --- !u!61 &1034147061337385765

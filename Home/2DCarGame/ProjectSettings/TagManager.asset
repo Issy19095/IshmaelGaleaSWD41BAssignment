@@ -16,8 +16,8 @@ TagManager:
   - Player
   - Obstacle
   - Missle
-  - ObsDes
-  - MissleDes
+  - ScoreCollector
+  - Shredder
   - 
   - 
   - 

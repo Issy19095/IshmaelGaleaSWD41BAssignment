@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
-    [SerializeField] int health = 50;
+    [SerializeField] int health = 5;
 
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
@@ -20,18 +20,20 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        SetUpMoveBoundaries();
+          SetUpMoveBoundaries();
     }
 
     private void SetUpMoveBoundaries()
     {
+        
         //get the main camera from Unity
         Camera gameCamera = Camera.main;
         //set boundaries on the x-axis
         xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
-
+        
     }
+
 
     public void OnTriggerEnter2D(Collider2D otherObject)
     {
@@ -51,7 +53,9 @@ public class Player : MonoBehaviour
         dmg.Hit();
 
         AudioSource.PlayClipAtPoint(obstacleHitSound, Camera.main.transform.position, obstacleHitSoundVolume);
-        
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(explosion, explosionDuration);
+
         if (health <= 0 && score < 100)
         {
             Die();
